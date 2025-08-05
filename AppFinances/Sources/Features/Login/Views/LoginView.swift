@@ -49,6 +49,7 @@ class LoginView: UIView {
         textInput.validator = .email
         textInput.placeholder = "E-mail"
         textInput.alpha = 0
+        textInput.keyboardType = .emailAddress
         return textInput
     }()
     

@@ -23,14 +23,15 @@ class HomeViewModel {
     }
     
     func saveUserPhoto(image: UIImage){
-        UserDefaultManager.shared.saveUserPhoto(image: image)
+        UserDefaultsManager.shared.saveUserPhoto(image: image)
     }
     
     func getUserPhoto() -> UIImage? {
-        return UserDefaultManager.shared.getUserPhoto()
+        return UserDefaultsManager.shared.getUserPhoto()
     }
     
     func logout() async throws {
         try await service.logout()
+        UserDefaultsManager.shared.clear()
     }
 }

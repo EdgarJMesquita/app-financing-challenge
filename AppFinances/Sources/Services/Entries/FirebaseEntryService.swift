@@ -33,10 +33,10 @@ class FirebaseEntryService: FirebaseAuthService, EntryServiceProtocol {
     func create(form: AddEntryForm) async throws -> AFEntry {
         let userId = try getUserId()
         
-        let newEntry = try AFEntry.from(userId: userId, addEntryForm: form)
+        var newEntry = try AFEntry.from(userId: userId, addEntryForm: form)
 
-        try db.collection(entriesCollectionName).addDocument(from: newEntry)
-        
+        let ref = try db.collection(entriesCollectionName).addDocument(from: newEntry)
+        newEntry.id = ref.documentID
         return newEntry
     }
     

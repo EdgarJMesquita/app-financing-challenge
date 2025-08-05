@@ -1,5 +1,5 @@
 //
-//  UserDefaultManager.swift
+//  UserDefaultsManager.swift
 //  AppFinances
 //
 //  Created by Edgar on 31/07/25.
@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class UserDefaultManager {
-    static let shared = UserDefaultManager()
+class UserDefaultsManager {
+    static let shared = UserDefaultsManager()
     
     private let userDefaults = UserDefaults.standard
     
@@ -39,5 +39,10 @@ class UserDefaultManager {
     
     func getUserEmail() -> String? {
         return userDefaults.string(forKey: kUserEmail)
+    }
+    
+    func clear(){
+        userDefaults.removeObject(forKey: kUserEmail)
+        userDefaults.removeObject(forKey: kUserPhoto)
     }
 }

@@ -55,7 +55,7 @@ class LoginViewModel {
             return
         }
        
-        UserDefaultManager.shared.saveUserEmail(email)
+        UserDefaultsManager.shared.saveUserEmail(email)
     }
 
     typealias BiometricResult = (email: String, password: String)
@@ -66,7 +66,7 @@ class LoginViewModel {
                 continuation.resume(throwing: AFError.custom(message: "Não é possível usar biometria neste momento."))
                 return
             }
-            guard let userEmail = UserDefaultManager.shared.getUserEmail() else {
+            guard let userEmail = UserDefaultsManager.shared.getUserEmail() else {
                 continuation.resume(throwing: AFError.custom(message: "Não há senha salva."))
                 return
             }
