@@ -8,7 +8,7 @@ App Finances helps your helps you with your monthly budget. Track your income an
 
 ### Preview
 
-<video src="docs/output.mp4" autoplay controls loop/>
+![demo.gif](docs/demo.gif)
 
 ### Features
 
