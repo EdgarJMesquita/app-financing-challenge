@@ -6,6 +6,10 @@
 
 App Finances helps your helps you with your monthly budget. Track your income and expenses, and securely log in using Face ID.
 
+### Preview
+
+<video src="docs/output.mp4" autoplay controls loop/>
+
 ### Features
 
 - Monthly Budgets Management
